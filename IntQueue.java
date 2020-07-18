@@ -26,8 +26,11 @@ public class IntQueue {
 	
 	public boolean enQueue(int item) {
 		if(!isFull()) {
-			queue[rear++] = item;
+			queue[rear] = item;
+			//rear++;  
+			rear =(rear+1)%size;
 			total++;
+			return true;
 		}
 		return false;
 	}
@@ -35,14 +38,20 @@ public class IntQueue {
 	public int dequeue() {
 		int data = 0;
 		if(!isEmpty()) {
-			data = queue[front++];
+			data = queue[front];
+			queue[front] =0;
+			//front++;
+			front = (front+1)%size;
 			total--;
 		}
 		return data;
 	}
 	
 	public boolean isFull() {
-		return (size == total);
+		if(size == total) {
+			return true;
+		}
+		return false;
 	}
 	
 	public boolean isEmpty() {
@@ -52,18 +61,23 @@ public class IntQueue {
 	// main method is to test our custom stack 
 	
 		public static void main(String[] args) {
-			IntQueue queue = new IntQueue(4);
+			IntQueue q = new IntQueue(4);
 			
-			queue.enQueue(7);
-			queue.enQueue(17);
-			queue.enQueue(27);
-			queue.enQueue(37);
+			q.enQueue(7);
+			q.enQueue(17);
+			q.enQueue(27);
+			q.enQueue(37);
 			
-			System.out.println(queue.dequeue());
-			System.out.println(queue.dequeue());
-			System.out.println(queue.dequeue());
-			System.out.println(queue.dequeue());
+			System.out.println(q.dequeue());
+			System.out.println(q.dequeue());
+			System.out.println(q.dequeue());
+			System.out.println(q.dequeue());
 			
+			
+			//System.out.println(Arrays.toString(q));
+			
+			q.enQueue(47);
+			System.out.println(q.dequeue());
 			
 		}
 	
