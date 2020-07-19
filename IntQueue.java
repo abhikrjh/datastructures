@@ -58,7 +58,7 @@ public class IntQueue {
 		return (total == 0);
 	}
 	
-	// main method is to test our custom stack 
+	// main method is to test our custom Queue 
 	
 		public static void main(String[] args) {
 			IntQueue q = new IntQueue(4);
