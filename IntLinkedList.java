@@ -76,6 +76,36 @@ public class IntLinkedList {
 
 	}
 
+	// used bubble sort algorithm to sort this
+	public void sortList() {
+		Node first = head;
+		int temp = 0;
+		while (first.next != null) {
+			Node second = first.next;
+			while (second != null) {
+				if (first.value < second.value) {
+					temp = second.value;
+					second.value = first.value;
+					first.value = temp;
+				}
+				second = second.next;
+			}
+			first = first.next;
+		}
+
+	}
+
+	public int size() {
+		int size = 0;
+		Node n = head;
+		while (n.next != null) {
+			n = n.next;
+			size++;
+		}
+		size = size + 1;
+		return size;
+	}
+
 	public void printList() {
 		Node n = head;
 		while (n.next != null) {
@@ -88,19 +118,21 @@ public class IntLinkedList {
 	// main method is to test our LinkedList
 
 	public static void main(String[] args) {
-		
-		  IntLinkedList li = new IntLinkedList(1);
-		  
-		  li.insertAtStart(3); li.insertAtStart(5); li.insertAtStart(7);
-		  li.insertAtStart(8);
-		  
-		  li.printList();
-		 
+
+		IntLinkedList li = new IntLinkedList(20);
+
+		li.insertAtStart(13);
+		li.insertAtStart(5);
+		li.insertAtStart(77);
+		li.insertAtStart(28);
+		li.insertAtStart(7);
+		li.printList();
+
 		// o/p - 8, 7, 5, 3
 
-		System.out.println("#########################");
+		/*System.out.println("#########################");
 
-		/*
+		
 		 * IntLinkedList li1 = new IntLinkedList(1);
 		 * 
 		 * li1.insertAtEnd(3); li1.insertAtEnd(5); li1.insertAtEnd(7);
@@ -111,16 +143,21 @@ public class IntLinkedList {
 
 		// o/p - 3, 5, 7, 8
 
-		System.out.println("#########################");
-
+		/*
+		 * System.out.println("#########################");
+		 * 
+		 * li.deleteItem(8); li.printList();
+		 * System.out.println("#########################"); li.insertAtEnd(9);
+		 * 
+		 * li.printList();
+		 */
+		System.out.println("######## After Sorting ############");
 		
-		  li.deleteItem(8);
-		  li.printList();
-		  System.out.println("#########################");
-		  li.insertAtEnd(9);
-		  
-		  li.printList();
-		 
+		li.sortList();
+		li.printList();
+		
+		System.out.println("#########################");
+		System.out.println("size of list : " + li.size());
 	}
 
 }
