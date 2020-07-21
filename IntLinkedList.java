@@ -95,6 +95,25 @@ public class IntLinkedList {
 
 	}
 
+	// reverse LinkedList
+
+	public void reversedLinkedList() {
+
+		Node previousNode = null;
+		Node currentNode = head;
+		Node nextNode = null;
+
+		while (currentNode.next != null) {
+			nextNode = currentNode.next;
+			currentNode.next = previousNode;
+			previousNode = currentNode;
+			currentNode = nextNode;
+		}
+		head = currentNode;
+		head.next = previousNode;
+
+	}
+
 	public int size() {
 		int size = 0;
 		Node n = head;
@@ -119,20 +138,18 @@ public class IntLinkedList {
 
 	public static void main(String[] args) {
 
-		IntLinkedList li = new IntLinkedList(20);
-
-		li.insertAtStart(13);
-		li.insertAtStart(5);
-		li.insertAtStart(77);
-		li.insertAtStart(28);
-		li.insertAtStart(7);
-		li.printList();
-
+		/*
+		 * IntLinkedList li = new IntLinkedList(20);
+		 * 
+		 * li.insertAtStart(13); li.insertAtStart(5); li.insertAtStart(77);
+		 * li.insertAtStart(28); li.insertAtStart(7); li.printList();
+		 */
 		// o/p - 8, 7, 5, 3
 
-		/*System.out.println("#########################");
-
-		
+		/*
+		 * System.out.println("#########################");
+		 * 
+		 * 
 		 * IntLinkedList li1 = new IntLinkedList(1);
 		 * 
 		 * li1.insertAtEnd(3); li1.insertAtEnd(5); li1.insertAtEnd(7);
@@ -151,13 +168,32 @@ public class IntLinkedList {
 		 * 
 		 * li.printList();
 		 */
-		System.out.println("######## After Sorting ############");
-		
-		li.sortList();
-		li.printList();
-		
+
+		/*
+		 * 
+		 * System.out.println("######## After Sorting ############");
+		 * 
+		 * li.sortList(); li.printList();
+		 * 
+		 * System.out.println("#########################");
+		 * System.out.println("size of list : " + li.size());
+		 * 
+		 */
 		System.out.println("#########################");
-		System.out.println("size of list : " + li.size());
+		IntLinkedList li = new IntLinkedList(1);
+
+		li.insertAtEnd(2);
+		li.insertAtEnd(3);
+		li.insertAtEnd(4);
+		li.insertAtEnd(5);
+		li.insertAtEnd(6);
+		li.insertAtEnd(7);
+
+		li.printList();
+
+		System.out.println("###### Reversed LinkedList ########");
+		li.reversedLinkedList();
+		li.printList();
 	}
 
 }
