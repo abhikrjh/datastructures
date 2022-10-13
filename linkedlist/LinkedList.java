@@ -1,7 +1,6 @@
-package LinkedList;
+package linkedlist;
 
-import org.w3c.dom.Node;
- /*
+/*
   A node can be added in three ways
     1) At the front of the linked list
     2) After a given node.

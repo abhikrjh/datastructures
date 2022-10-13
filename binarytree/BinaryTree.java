@@ -1,5 +1,4 @@
-package BinaryTree;
-import javax.swing.tree.TreeNode;
+package binarytree;
 
 public class BinaryTree {
 
