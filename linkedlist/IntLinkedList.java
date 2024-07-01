@@ -135,12 +135,12 @@ public class IntLinkedList {
 
     public Node findNthNodeFromEnd(int n) {
         // 5 -> 4 -> 3 -> 2 -> 1 -> null
-        // (size - n) from start
+        // (size - n - 1) from start
         Node node = head;
         int size = size();
         int index = 0;
         while (node != null) {
-            if (index == size - n) {
+            if (index == size - n - 1) {
                 return node;
             }
             node = node.next;
