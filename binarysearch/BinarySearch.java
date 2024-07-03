@@ -6,22 +6,22 @@ public class BinarySearch {
     // return -1 if it does not exit.
     private static int binarySearch(int[] arr, int target) {
 
-        int start = 0;
-        int end = arr.length - 1;
+        int startIndex = 0;
+        int endIndex = arr.length - 1;
 
-        while (start <= end) {
+        while (startIndex <= endIndex) {
 
-            int mId = start + (end - start) / 2;
+            int middleIndex = startIndex + (endIndex - startIndex) / 2;
 
-            if (target < arr[mId]) {
+            if (target < arr[middleIndex]) {
 
-                end = mId - 1;
-            } else if (target > arr[mId]) {
+                endIndex = middleIndex - 1;
+            } else if (target > arr[middleIndex]) {
 
-                start = mId + 1;
+                startIndex = middleIndex + 1;
             } else {
 
-                return mId;
+                return middleIndex;
             }
         }
         return -1;

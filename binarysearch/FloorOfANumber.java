@@ -5,32 +5,32 @@ public class FloorOfANumber {
     // return greatest number which is <= target
     private static int ceilingOfANumber(int[] arr, int target) {
 
-        int start = 0;
-        int end = arr.length - 1;
+        int startIndex = 0;
+        int endIndex = arr.length - 1;
 
-        if (target > arr[arr.length - 1]) {
+        if(target < arr[0]){
             return -1;
         }
 
-        while (start <= end) {
+        while (startIndex <= endIndex) {
 
-            int mId = start + (end - start) / 2;
+            int middleIndex = startIndex + (endIndex - startIndex) / 2;
 
-            if (target < arr[mId]) {
-                end = mId - 1;
-            } else if (target > arr[mId]) {
-                start = mId + 1;
+            if (target < arr[middleIndex]) {
+                endIndex = middleIndex - 1;
+            } else if (target > arr[middleIndex]) {
+                startIndex = middleIndex + 1;
             } else {
-                return arr[mId];
+                return arr[middleIndex];
             }
         }
-        return arr[end];
+        return arr[endIndex];
     }
 
     public static void main(String[] args) {
 
         int[] arr = new int[]{3, 5, 6, 7, 14, 16, 19};
-        int target = 8;
+        int target = 2;
 
         int i = ceilingOfANumber(arr, target);
 
