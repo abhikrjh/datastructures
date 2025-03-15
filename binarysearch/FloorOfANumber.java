@@ -3,6 +3,12 @@ package binarysearch;
 public class FloorOfANumber {
 
     // return greatest number which is <= target
+
+    // "The greatest number that is less than OR EQUAL TO the target."
+
+   //  If an exact match for the target exists, the floor is the target itself.
+    //  Otherwise, it is the largest number smaller than the target.
+
     private static int ceilingOfANumber(int[] arr, int target) {
 
         int startIndex = 0;

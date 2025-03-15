@@ -3,6 +3,11 @@ package binarysearch;
 public class CeilingOfANumber {
 
     // return smallest number which is >= target
+
+//    Ceiling means "greater than OR EQUAL TO", not strictly greater.
+//
+//    If target exists, it itself is the ceiling.
+
     private static int ceilingOfANumber(int[] arr, int target) {
 
         int startIndex = 0;
