@@ -75,6 +75,8 @@ public class StockBuyAndSell {
         int maxProfit = 0;
         int minPrice = Integer.MAX_VALUE;
 
+//        Input: prices = [7,1,5,3,6,4]
+
         for (int price : prices) {
 
             if (price < minPrice) {
@@ -90,6 +92,34 @@ public class StockBuyAndSell {
 
         return maxProfit;
     }
+    /*
+    Input: prices = [7,1,5,3,6,4]
+    Output: 5
+    */
+    private static int maxProfit1(int[] prices){
+
+        int maxProfit = 0;
+        int start = 0;
+        int end = 1;
+        while(start<end){
+
+            if(start == prices.length - 1){
+                return maxProfit;
+            }
+
+            if(prices[end] - prices[start] > maxProfit){
+                maxProfit = prices[end] - prices[start];
+            }
+            if(end == prices.length - 1){
+                start++;
+                end = start+1;
+            }else {
+                end++;
+            }
+        }
+
+        return maxProfit;
+    }
 
     public static void main(String[] args) {
 
@@ -98,5 +128,7 @@ public class StockBuyAndSell {
 //        int[] prices = new int[]{7,6,4,3,1};
 
         System.out.println(maxProfit(prices));
+
+//        System.out.println(maxProfit1(prices));
     }
 }
