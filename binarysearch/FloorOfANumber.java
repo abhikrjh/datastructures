@@ -9,7 +9,7 @@ public class FloorOfANumber {
    //  If an exact match for the target exists, the floor is the target itself.
     //  Otherwise, it is the largest number smaller than the target.
 
-    private static int ceilingOfANumber(int[] arr, int target) {
+    private static int floorOfANumber(int[] arr, int target) {
 
         int startIndex = 0;
         int endIndex = arr.length - 1;
@@ -38,7 +38,7 @@ public class FloorOfANumber {
         int[] arr = new int[]{3, 5, 6, 7, 14, 16, 19};
         int target = 2;
 
-        int i = ceilingOfANumber(arr, target);
+        int i = floorOfANumber(arr, target);
 
         System.out.println("ceiling of " + target + " is : " + i);
     }
