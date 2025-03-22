@@ -28,7 +28,7 @@ public class RotateArray {
 
     // 1,2,3,4,5,6
 
-    private static void rightRotate(int[] nums, int k) {
+    private static void rightRotate1(int[] nums, int k) {
 
         for (int i = 0; i < k; i++) {
 
@@ -76,7 +76,7 @@ public class RotateArray {
     5, 6, 1, 2, 3, 4 // reversed the remaining element of array
     */
 
-    private static void rightRotate1(int[] nums, int k) {
+    private static void rightRotate(int[] nums, int k) {
 
         if (nums.length == 0 || nums.length == 1) {
             return;
@@ -127,7 +127,7 @@ public class RotateArray {
 
 //        leftRotate(arr, k);
 
-        rightRotate1(arr, k);
+        rightRotate(arr, k);
 
 //        System.out.println(Arrays.toString(arr));
 
