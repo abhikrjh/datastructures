@@ -20,7 +20,6 @@ public class DefaultFunctionalInterfaces {
         Consumer<Integer> c = i -> {
             for (int j = 1; j <= i; j++) {
                 System.out.print(j+" ");
-                System.out.println();
             }
         };
         c.accept(num);
@@ -43,10 +42,14 @@ public class DefaultFunctionalInterfaces {
 
     // Supplier : supplies value without input
 
-    private static String testSupplier(int num) {
+    private static Integer testSupplier(int num) {
 
-        Supplier<String> s = () -> testFunction(num); // here no input () -> ....
-        return s.get();
+//        Supplier<String> s = () -> testFunction(num); // here no input () -> ....
+//        return s.get();
+
+        Supplier<Integer> s1 = () -> num / 2;
+
+        return s1.get();
     }
 
     public static void main(String[] args) {

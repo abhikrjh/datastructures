@@ -16,7 +16,7 @@ public class SecondLargestNumber {
         System.out.println(list);
 
         return numbers.stream()
-                .sorted((o1, o2) -> Integer.compare(o1, o2))
+                .sorted(Integer::compare)
                 .skip(numbers.size() - 2)
                 .findFirst()
                 .orElse(-1);

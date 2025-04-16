@@ -43,9 +43,36 @@ public class ValidPalindrome {
         return true;
     }
 
+    private static boolean validPalindrome(String s){
+
+        if (null == s || s.isEmpty())
+            return false;
+
+        s = s.replaceAll("[^a-zA-Z0-9]", "").toLowerCase();
+
+        char[] arr = s.toCharArray();
+
+        int start = 0;
+        int end = arr.length -1;
+
+        while(start < end){
+
+            if(arr[start] != arr[end]){
+                return false;
+            }
+            start++;
+            end--;
+        }
+
+        return true;
+    }
+
     public static void main(String[] args) {
         ValidPalindrome v = new ValidPalindrome();
         String input = "A man, a plan, a canal: Panama";
         System.out.println(v.isValidPalindrome(input));
+
+        System.out.println(validPalindrome(input));
     }
+
 }

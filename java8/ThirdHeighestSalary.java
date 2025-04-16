@@ -1,6 +1,7 @@
 package java8;
 
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
 
@@ -47,14 +48,22 @@ public class ThirdHeighestSalary {
                 );
 
 
-        Optional<Double> first = employees.stream()
+        Optional<Double> third1 = employees.stream()
                 .map(employee -> employee.getSalary())
                 .distinct()
                 .sorted((o1, o2) -> Double.compare(o2, o1))
                 .skip(2)
                 .findFirst();
 
-        System.out.println(first.get());
+        Optional<Double> third2 = employees.stream()
+                .map(employee -> employee.getSalary())
+                .distinct()
+                .sorted(Comparator.reverseOrder())
+                .skip(2)
+                .findFirst();
+
+        System.out.println(third1.get());
+        System.out.println(third2.get());
 
 
     }
