@@ -62,8 +62,17 @@ public class ThirdHeighestSalary {
                 .skip(2)
                 .findFirst();
 
+        Double v = employees.stream()
+                .map(Employee::getSalary)
+                .sorted(Comparator.reverseOrder())
+                .limit(3)
+                .sorted()
+                .findFirst()
+                .get();
+
         System.out.println(third1.get());
         System.out.println(third2.get());
+        System.out.println(v);
 
 
     }

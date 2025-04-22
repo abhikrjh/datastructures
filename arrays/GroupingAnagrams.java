@@ -24,6 +24,48 @@ public class GroupingAnagrams {
 
         Map<String, List<String>> map = new HashMap<>();
 
+        List<String> result = new ArrayList<>();
+
+        for (String word : words) {
+
+            char[] chars = word.toCharArray();
+
+            Arrays.sort(chars);
+
+            String sortedWords = new String(chars);
+
+            if (map.get(sortedWords) == null) {
+
+                List<String> list = new ArrayList<>();
+
+                list.add(word);
+
+                map.put(sortedWords, list);
+            } else {
+
+                List<String> list = map.get(sortedWords);
+
+                list.add(word);
+
+                map.put(sortedWords, list);
+            }
+
+
+        }
+
+        System.out.println(map);
+
+        return map.entrySet()
+                .stream()
+                .map(Map.Entry::getValue)
+                .sorted(Comparator.comparing(List::size))
+                .toList();
+    }
+
+    private static List<List<String>> groupAnagrams1(String[] words) {
+
+        Map<String, List<String>> map = new HashMap<>();
+
         for (String word : words) {
 
             char[] chars = word.toCharArray();
