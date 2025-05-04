@@ -28,6 +28,9 @@ public class LeftRotateArray {
 
     private static int[] leftRotate(int[] arr, int k){
 
+        k = k % arr.length; // this is important when k is more than arr length
+        // otherwise when its less it will not change value of k
+
         // reverse the entire array
 
         reverseArr(arr, 0, arr.length - 1);
