@@ -35,7 +35,7 @@ public class RotateImage {
 
         // reverse each row
         // 1, 4, 7                      7, 4, 1
-        // 2, 5, 8    ---transpose--->  8, 5, 2
+        // 2, 5, 8    ---reverse--->    8, 5, 2
         // 3, 6, 9                      9, 6, 3
 
         for (int i = 0; i < matrix.length; i++) {// row

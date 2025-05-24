@@ -8,7 +8,7 @@ public class LRUCache<k,v> extends LinkedHashMap<k,v> {
     private final int capacity;
 
     public LRUCache(int capacity){
-        super(capacity, 0.75f, true);
+        super(capacity, 0.75f, true); // LinkedHashMap constructor call (true enable access order)
         this.capacity = capacity;
     }
 

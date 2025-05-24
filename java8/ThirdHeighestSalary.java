@@ -1,37 +1,12 @@
 package java8;
 
+import java8.common.Employee;
+
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
 
-class Employee {
-    int empId;
-    String name;
-    double salary;
-    String dept;
-
-    public Employee(int empId, String name, double salary, String dept) {
-        this.empId = empId;
-        this.name = name;
-        this.salary = salary;
-        this.dept = dept;
-    }
-
-    public double getSalary() {
-        return salary;
-    }
-
-    @Override
-    public String toString() {
-        return "Employee{" +
-                "empId=" + empId +
-                ", name='" + name + '\'' +
-                ", salary=" + salary +
-                ", dept='" + dept + '\'' +
-                '}';
-    }
-}
 
 public class ThirdHeighestSalary {
 
@@ -45,7 +20,7 @@ public class ThirdHeighestSalary {
                 new Employee(4, "David", 9000, "IT"),
                 new Employee(5, "Eve", 8000, "Finance"),
                 new Employee(6, "Lasith", 20000, "HR")
-                );
+        );
 
 
         Optional<Double> third1 = employees.stream()

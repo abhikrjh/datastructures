@@ -6,6 +6,46 @@ public class ValidPalindrome {
 //    removing all non-alphanumeric characters, it reads the same forward and backward.
 //    Alphanumeric characters include letters and numbers.
 
+    private static boolean isPalindrome(String s) {
+
+        if (s.isEmpty()) {
+            return true;
+        }
+
+        s = removeNonAlphaNumericChar(s).toLowerCase();
+
+        System.out.println(s);
+
+        return s.equals(reverse(s));
+    }
+
+    private static String reverse(String s) {
+
+        char[] chars = s.toCharArray();
+
+        int start = 0;
+        int end = s.length() - 1;
+
+        while (start < end) {
+
+            char temp = chars[start];
+            chars[start] = chars[end];
+            chars[end] = temp;
+
+            start++;
+            end--;
+        }
+
+        return String.valueOf(chars);
+    }
+
+    private static String removeNonAlphaNumericChar(String s) {
+
+        return s.replaceAll("[^a-zA-Z0-9]", "");
+    }
+
+
+
     private boolean isValidPalindrome(String str) {
 
         if (null == str || str.isEmpty())
@@ -68,11 +108,9 @@ public class ValidPalindrome {
     }
 
     public static void main(String[] args) {
-        ValidPalindrome v = new ValidPalindrome();
-        String input = "A man, a plan, a canal: Panama";
-        System.out.println(v.isValidPalindrome(input));
 
-        System.out.println(validPalindrome(input));
+        String input = "A man, a plan, a canal: Panama";
+        System.out.println(isPalindrome(input));
     }
 
 }
