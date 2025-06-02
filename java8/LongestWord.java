@@ -16,6 +16,14 @@ public class LongestWord {
 
     }
 
+    private static String longestWord1(List<String> words){
+
+        return words.stream()
+                .max(Comparator.comparingInt(String::length))
+                .orElse("");
+
+    }
+
     public static void main(String[] args) {
         List<String> words = Arrays.asList("apple", "banana", "cherry", "watermelon");
 
