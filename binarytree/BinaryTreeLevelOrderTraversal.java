@@ -16,29 +16,12 @@ Output: []
 
 */
 
+import binarytree.common.*;
+
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
-
-class TreeNode {
-    int val;
-    TreeNode left;
-    TreeNode right;
-
-    TreeNode() {
-    }
-
-    TreeNode(int val) {
-        this.val = val;
-    }
-
-    TreeNode(int val, TreeNode left, TreeNode right) {
-        this.val = val;
-        this.left = left;
-        this.right = right;
-    }
-}
 
 
 public class BinaryTreeLevelOrderTraversal {
@@ -94,7 +77,7 @@ public class BinaryTreeLevelOrderTraversal {
             System.out.print(level);
 
             count++;
-            if(count < result.size()) {
+            if (count < result.size()) {
                 System.out.print(", ");
             }
         }
@@ -114,7 +97,25 @@ public class BinaryTreeLevelOrderTraversal {
 
         List<List<Integer>> result = levelOrder(root);
 
-
         print(result);
+
+        System.out.println();
+        System.out.println("---------------------------------------------------");
+
+        TreeNode root1 = new TreeNode(1);
+        root1.left = new TreeNode(2);
+        root1.right = new TreeNode(3);
+
+        root1.left.left = new TreeNode(4);
+        root1.left.right = new TreeNode(5);
+
+        root1.right.left = new TreeNode(6);
+        root1.right.right = new TreeNode(7);
+
+        List<List<Integer>> lists = levelOrder(root1);
+
+        print(lists);
+
+
     }
 }
