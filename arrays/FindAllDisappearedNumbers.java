@@ -41,7 +41,7 @@ public class FindAllDisappearedNumbers {
 
             if(nums[i] > 0) {
 
-                result.add(nums[i]);
+                result.add(i+1);
             }
         }
 
