@@ -17,6 +17,8 @@ Output: 4
 
 public class FindInRotatedSortedArray {
 
+    // 4,5,6,7,0,1,2
+
     static int findThePivotIndex(int[] arr) {
         int start = 0;
         int end = arr.length - 1;
