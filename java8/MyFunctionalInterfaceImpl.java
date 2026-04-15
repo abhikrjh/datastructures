@@ -4,7 +4,7 @@ public class MyFunctionalInterfaceImpl {
 
     public static void main(String[] args) {
 
-        MyFunctionalInterface myFunc = System.out::println;
+        MyFunctionalInterface myFunc = message -> System.out.println(message);
 
         myFunc.showMessage("Hello!!! How are you?");
 

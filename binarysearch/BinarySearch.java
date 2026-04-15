@@ -29,8 +29,11 @@ public class BinarySearch {
 
     public static void main(String[] args) {
 
-        int[] arr = new int[]{1, 2, 5, 7, 14, 16, 19};
-        int target = 7;
+//        int[] arr = new int[]{1, 2, 5, 7, 14, 16, 19};
+//        int target = 7;
+        int[] arr = {-1,0,3,5,9,12};
+        int target = 9;
+
 
         int i = binarySearch(arr, target);
 
