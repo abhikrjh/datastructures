@@ -1,4 +1,4 @@
-package leetcode150.array;
+package arrays;
 /*
 Merge Sorted Array
 
